@@ -92,13 +92,13 @@ $` \Sigma_{ii} \le \lambda_{1} \sum_{k=1}^d (u_k)_i^2 `$
 
 with
 
-$´ \sum_{k=1}^d (u_k)_i^2 = 1 `$ 
+$\sum_{k=1}^d (u_k)_i^2 = 1$ 
 
 it simplyfies to
 
 $` \Sigma_{ii} \le \lambda_{1} .`$
 
-Since it is true for all $´ i `$, we find that:
+Since it is true for all $i$, we find that:
 
 $` max_{i=1}^d \Sigma \le \lambda_{1}`$ 
 
