@@ -64,3 +64,60 @@ This simplifies to
 $`
 \Sigma u = \lambda u.
 `$
+
+# Exercise 2
+
+## a)
+
+The Relation easily comes from the trace and the equalities from the lecture:
+
+$`\sum_{i=1}^{d} \Sigma `$
+$`= Tr( \Sigma ) = \sum_{k=1}^{d} \lambda_i > \lambda_1`$
+
+## b) 
+
+We can express the covariance matrix $` \Sigma `$ in therm of its eigenvalues and eigenvectors as:
+
+$` \Sigma = \sum_{i=1}^d \lambda_k u_k u_k^{\top} ,`$
+
+where $` u_k `$ is the eigenvector associated with the eigenvalue $` \lambda_k `$
+
+Each $` \Sigma_{ii} `$ can be expressed as:
+
+$` \Sigma_{ii} = \sum_{k=1}^d \lambda_k (u_k)_i^2 .`$
+
+Since $` \lambda_{1} > \lambda_k `$ for all $` k = 1 `$:
+
+$` \Sigma_{ii} \le \lambda_{1} \sum_{k=1}^d (u_k)_i^2 `$
+
+with
+
+$\sum_{k=1}^d (u_k)_i^2 = 1$ 
+
+it simplyfies to
+
+$` \Sigma_{ii} \le \lambda_{1} .`$
+
+Since it is true for all $i$, we find that:
+
+$` max_{i=1}^d \Sigma \le \lambda_{1}`$ 
+
+# Exercise 3
+
+## a) 
+
+Consider $w$ for step $t+1$ in $\varepsilon_k$: 
+
+$\varepsilon_k(w^{(t+1)}) = |\frac{w^{(t+1)^\top} u_k}{w^{(t+1)^\top}u_1}| = |\frac{(\sum w^{(t+1)})^\top u_k}{(\sum w^{(t+1)})^\top u_1}| = |\frac{( w^{(t+1)}\sum)^\top u_k}{(w^{(t+1)}\sum)^\top u_1}| = |\frac{(w^t)^\top\sum u_k}{(w^t)^\top\sum u_1}| $
+
+We can swap **∑** and $w_k$ because correlation matrix is symmetric.
+
+## b)
+
+$\varepsilon_k(w^{(t+1)}) = |\frac{(w^t)^\top\sum u_k}{ (w^t)^\top\sum u_1}| = |\frac{(w^t)^\top\lambda_ku_k}{ (w^t)^\top\lambda_1 u_1}| = |\frac{\lambda_k}{\lambda_1}||\frac{(w^t)^\top u_k}{ (w^t)^\top u_1}| =  |\frac{\lambda_k}{\lambda_1}|\varepsilon_k(w^t)$
+ 
+## c)
+
+From our recurrence, this gives us: 
+
+$\varepsilon_k(w^{(t)}) = |\frac{\lambda_k}{\lambda_1}|\varepsilon_k(w^{(t-1)}) = |(\frac{\lambda_k}{\lambda_1})^2|\varepsilon_k(w^{(t-2)}) = |(\frac{\lambda_k}{\lambda_1})^t|\varepsilon_k(w^{(0)})$
